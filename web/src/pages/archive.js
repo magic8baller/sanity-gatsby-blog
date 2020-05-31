@@ -1,20 +1,20 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {mapEdgesToNodes} from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
+import {mapEdgesToNodes} from 'lib/helpers'
+import BlogPostPreviewGrid from 'components/blogList/blog-post-preview-grid'
+import Container from 'components/container/container'
+import GraphQLErrorList from 'components/graphql-error-list'
+import SEO from 'components/seo'
+import Layout from 'containers/layout'
 
-import {responsiveTitle1} from '../components/typography.module.css'
+import {responsiveTitle1} from 'components/typography.module.css'
 
 export const query = graphql`
   query ArchivePageQuery {
     posts: allSanityPost(
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      sort: {fields: [publishedAt], order: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+    ) {
       edges {
         node {
           id

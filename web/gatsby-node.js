@@ -1,11 +1,14 @@
-const {isFuture} = require('date-fns')
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const {isFuture, format} = require('date-fns')
+// const {format} = require('date-fns')
+// const path = require(`path`)
 
-const {format} = require('date-fns')
+// exports.onCreateWebpackConfig = ({actions}) => {
+//   actions.setWebpackConfig({
+//     resolve: {
+//       modules: [path.resolve(__dirname, 'src'), 'node_modules']
+//     }
+//   })
+// }
 
 async function createBlogPostPages (graphql, actions) {
   const {createPage} = actions
