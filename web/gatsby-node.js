@@ -1,5 +1,5 @@
 const {isFuture, format} = require('date-fns')
-// const {format} = require('date-fns')
+
 // const path = require(`path`)
 
 // exports.onCreateWebpackConfig = ({actions}) => {
@@ -14,9 +14,7 @@ async function createBlogPostPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityPost(
-        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      allSanityPost(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
         edges {
           node {
             id

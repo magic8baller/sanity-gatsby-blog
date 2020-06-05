@@ -1,33 +1,45 @@
-import React from 'react'
 /** @jsx jsx */
-import { Container, jsx, Styled, Text } from 'theme-ui'
-import { mediaQueries } from '../../gatsby-plugin-theme-ui/media-queries'
 
-const Footer = ({siteTitle}) => {
+import {jsx} from 'theme-ui'
+import useSiteMetadata from 'hooks/use-siteMetadata'
+import {Link} from 'gatsby'
+
+const Footer = () => {
+  const {title, url} = useSiteMetadata()
   return (
     <footer
       sx={{
-        bg: 'iceberg',
-        variant: 'footer.dark',
-        py: 6,
-        px: 6,
-        bottom: 0,
-        width: '100%'
+        fontSize: 1,
+        color: 'background',
+        bg: 'text',
+        variant: 'styles.footer'
       }}
     >
-      <Container
-        variant='layout.container.large'
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      <div
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          maxWidth: 768,
+          mx: 'auto',
+          px: 2,
+          py: 4
+        }}
       >
-        <div
-          sx={{
-            fontWeight: '600',
-            fontSize: 4
-          }}
-        >
-          © {new Date().getFullYear()}, Yoga with Susan Turis
+        <Link to='/' sx={{variant: 'styles.navlink', p: 2}}>
+          Home
+        </Link>
+        <Link to='/' sx={{variant: 'styles.navlink', p: 2}}>
+          Blog
+        </Link>
+        <Link to='/' sx={{variant: 'styles.navlink', p: 2}}>
+          About
+        </Link>
+        <div sx={{mx: 'auto'}} />
+        <div sx={{p: 2}}>
+          © {`${new Date().getFullYear()}`}, <a href={url}>{title}</a>
         </div>
-      </Container>
+      </div>
     </footer>
   )
 }

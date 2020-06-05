@@ -8,6 +8,7 @@
     "clean-cache": "gatsby clean",
     "dev": "npm run clean-cache && gatsby develop",
     "lint": "eslint .",
+    "start": "npm run dev",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -45,16 +46,20 @@
     "@fullcalendar/interaction": "^4.4.2",
     "@fullcalendar/react": "^4.4.2",
     "@fullcalendar/timegrid": "^4.4.2",
+    "@horacioh/gatsby-theme-instagram": "^0.1.6",
     "@theme-ui/presets": "^0.3.0",
+    "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-emotion": "^4.3.2",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-source-instagram": "^0.7.0",
     "gatsby-transformer-sharp": "^2.5.3",
+    "react-focus-lock": "^2.3.1",
     "react-icons": "^3.10.0",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "typeface-aleo": "0.0.69",
+    "typeface-open-sans": "0.0.75"
   }
 }
